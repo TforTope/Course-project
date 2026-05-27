@@ -1,0 +1,15 @@
+{
+    "name": "i425/eventhub",
+    "description": "Event management system API",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Tolu Olusegun",
+            "email": "Tolusegu@iu.edu"
+        }
+    ],
+    "require": {
+        "firebase/php-jwt": "^7.0",
+        "vlucas/phpdotenv": "^5.6"
+    }
+}

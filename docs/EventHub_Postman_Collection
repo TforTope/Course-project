@@ -1,0 +1,141 @@
+{
+  "info": {
+    "_postman_id": "a4fe9fc5-1783-4939-b7ce-11fe92d5c011",
+    "name": "EventHub-API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "55149306",
+    "_collection_link": "https://go.postman.co/collection/55149306-a4fe9fc5-1783-4939-b7ce-11fe92d5c011?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Welcome API",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "{{base_url}}/",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Events",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/ events",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            " events"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Events by ID/1",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/ events/1",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            " events",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Events",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/ events",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            " events"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create events by IB/1",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/ events/1",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            " events",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Event by ID/1",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/ events/1",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            " events",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete event by ID/1",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/ events/1",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            " events",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
