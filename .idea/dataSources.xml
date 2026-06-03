@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="eventhub_db" uuid="a0260535-2818-4da6-aeae-7e90bb69c099">
+    <data-source source="LOCAL" name="eventhub_db" uuid="636ef1ff-7cc4-40c3-998a-d81e54688ecb">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/eventhub_db</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306</jdbc-url>
       <jdbc-additional-properties>
         <property name="database.introspection.mysql.dbe5060" value="true" />
       </jdbc-additional-properties>
