@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="XAMPP" remoteFilesAllowedToDisappearOnAutoupload="false" autoUploadExternalChanges="true">
+    <serverData>
+      <paths name="XAMPP">
+        <serverdata>
+          <mappings>
+            <mapping deploy="I425\Course-project" local="$PROJECT_DIR$" web="/I425/Course-project" />
+            <mapping deploy="I425\Course-project" local="G:/My Drive/I425/Course-project" web="/I425/Course-project" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>
