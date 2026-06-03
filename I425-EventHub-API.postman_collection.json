@@ -1,0 +1,239 @@
+{
+    "info": {
+        "name": "I425-EventHub-API",
+        "description": "Postman collection for the EventHub RESTful API — Lab 2. All endpoints use the {{base_url}} variable. Set base_url to http://localhost/eventhub-api/public in your Postman environment.",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "http://localhost/eventhub-api/public",
+            "type": "string"
+        }
+    ],
+    "item": [
+        {
+            "name": "Organizers",
+            "item": [
+                {
+                    "name": "GET All Organizers",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "{{base_url}}/organizers",
+                            "host": ["{{base_url}}"],
+                            "path": ["organizers"]
+                        },
+                        "description": "Returns a list of all organizers in the database."
+                    }
+                },
+                {
+                    "name": "GET Organizer by ID",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "{{base_url}}/organizers/1",
+                            "host": ["{{base_url}}"],
+                            "path": ["organizers", "1"]
+                        },
+                        "description": "Returns a single organizer by their organizer_id."
+                    }
+                },
+                {
+                    "name": "GET Events by Organizer (One-to-Many)",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "{{base_url}}/organizers/1/events",
+                            "host": ["{{base_url}}"],
+                            "path": ["organizers", "1", "events"]
+                        },
+                        "description": "Returns all events associated with a specific organizer. Demonstrates the one-to-many relationship between Organizers and Events."
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Venues",
+            "item": [
+                {
+                    "name": "GET All Venues",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "{{base_url}}/venues",
+                            "host": ["{{base_url}}"],
+                            "path": ["venues"]
+                        },
+                        "description": "Returns a list of all venues in the database."
+                    }
+                },
+                {
+                    "name": "GET Venue by ID",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "{{base_url}}/venues/1",
+                            "host": ["{{base_url}}"],
+                            "path": ["venues", "1"]
+                        },
+                        "description": "Returns a single venue by its venue_id."
+                    }
+                },
+                {
+                    "name": "GET Events at a Venue (One-to-Many)",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "{{base_url}}/venues/3/events",
+                            "host": ["{{base_url}}"],
+                            "path": ["venues", "3", "events"]
+                        },
+                        "description": "Returns all events held at a specific venue. Demonstrates the one-to-many relationship between Venues and Events."
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Events",
+            "item": [
+                {
+                    "name": "GET All Events",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "{{base_url}}/events",
+                            "host": ["{{base_url}}"],
+                            "path": ["events"]
+                        },
+                        "description": "Returns a list of all events in the database."
+                    }
+                },
+                {
+                    "name": "GET All Events (filtered by category)",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "{{base_url}}/events?category=Music",
+                            "host": ["{{base_url}}"],
+                            "path": ["events"],
+                            "query": [
+                                { "key": "category", "value": "Music" }
+                            ]
+                        },
+                        "description": "Returns events filtered by category using the ?category= query parameter."
+                    }
+                },
+                {
+                    "name": "GET All Events (search by title)",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "{{base_url}}/events?q=tech",
+                            "host": ["{{base_url}}"],
+                            "path": ["events"],
+                            "query": [
+                                { "key": "q", "value": "tech" }
+                            ]
+                        },
+                        "description": "Returns events whose title contains the search term using LIKE."
+                    }
+                },
+                {
+                    "name": "GET Event by ID (with Organizer and Venue)",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "{{base_url}}/events/1",
+                            "host": ["{{base_url}}"],
+                            "path": ["events", "1"]
+                        },
+                        "description": "Returns a single event by its event_id, including its related organizer and venue data."
+                    }
+                },
+                {
+                    "name": "GET Attendees for an Event (Many-to-Many)",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "{{base_url}}/events/1/attendees",
+                            "host": ["{{base_url}}"],
+                            "path": ["events", "1", "attendees"]
+                        },
+                        "description": "Returns all attendees registered for a specific event. Demonstrates the many-to-many relationship between Events and Attendees via the Registrations junction table."
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Attendees",
+            "item": [
+                {
+                    "name": "GET All Attendees",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "{{base_url}}/attendees",
+                            "host": ["{{base_url}}"],
+                            "path": ["attendees"]
+                        },
+                        "description": "Returns a list of all attendees in the database."
+                    }
+                },
+                {
+                    "name": "GET Attendee by ID",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "{{base_url}}/attendees/1",
+                            "host": ["{{base_url}}"],
+                            "path": ["attendees", "1"]
+                        },
+                        "description": "Returns a single attendee by their attendee_id."
+                    }
+                },
+                {
+                    "name": "GET Events for an Attendee (Many-to-Many)",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "{{base_url}}/attendees/1/events",
+                            "host": ["{{base_url}}"],
+                            "path": ["attendees", "1", "events"]
+                        },
+                        "description": "Returns all events that a specific attendee is registered for. Demonstrates the many-to-many relationship between Attendees and Events via the Registrations junction table."
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Registrations",
+            "item": [
+                {
+                    "name": "GET All Registrations",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "{{base_url}}/registrations",
+                            "host": ["{{base_url}}"],
+                            "path": ["registrations"]
+                        },
+                        "description": "Returns all registrations with their related event and attendee data."
+                    }
+                },
+                {
+                    "name": "GET Registration by ID",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "{{base_url}}/registrations/1",
+                            "host": ["{{base_url}}"],
+                            "path": ["registrations", "1"]
+                        },
+                        "description": "Returns a single registration by its registration_id, including its related event and attendee."
+                    }
+                }
+            ]
+        }
+    ]
+}
