@@ -1,6 +1,6 @@
 <?php
 /**
- * Author: TOPE_OLUSEGU
+ * Author:
  * Date: 6/1/2026
  * File: settings.php
  * Description: store settings of application.
@@ -30,8 +30,8 @@ return function (DI\Container $container) {
             'db' => ['driver' => "mysql",
                 'host' => 'localhost',
                 'database' => 'eventhub_db',
-                'username' => 'phpuser',
-                'password' => 'phpuser',
+                'username' => 'root',
+                'password' => '',
                 'charset' => 'utf8mb4',
                 'collation' => 'utf8mb4_general_ci',
                 'prefix' => ''

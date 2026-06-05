@@ -1,6 +1,6 @@
 <?php
 /**
- * Author: TOPE_OLUSEGU
+ * Author:
  * Date: 6/2/2026
  * File: errorhandler.php
  * Description: Custom error handler for EventHub API
@@ -83,8 +83,7 @@ return function (
 
     // Encode into JSON, remove backslashes, and remove quotes around keys
     $payload = preg_replace(
-        '/"([^"]+)"\s*:\s*/',
-        '$1:',
+        '/"([^"]+)"\s*:\s*/', '$1:',
         stripslashes(json_encode($results, JSON_PRETTY_PRINT))
     );
 

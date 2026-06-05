@@ -1,6 +1,6 @@
 <?php
 /**
- * Author: TOPE_OLUSEGU
+ * Author:
  * Date: 6/2/2026
  * File: routes.php
  * Description: Defines routes for EventHub API
@@ -35,6 +35,10 @@ return function (App $app) {
             $group->get('/{attendee_id}', 'Attendee:view');
             $group->get('/{attendee_id}/registrations', 'Attendee:viewRegistrations');
             $group->get('/{attendee_id}/events', 'Attendee:viewEvents');
+            // Create, update, and delete attendee
+            $group->post('', 'Attendee:create');
+            $group->put('/{attendee_id}', 'Attendee:update');
+            $group->delete('/{attendee_id}', 'Attendee:delete');
         });
 
         // Route group for /events pattern
@@ -47,6 +51,10 @@ return function (App $app) {
             $group->get('/{event_id}/venue', 'Event:viewVenue');
             $group->get('/{event_id}/registrations', 'Event:viewRegistrations');
             $group->get('/{event_id}/attendees', 'Event:viewAttendees');
+            // Create, update, and delete event
+            $group->post('', 'Event:create');
+            $group->put('/{event_id}', 'Event:update');
+            $group->delete('/{event_id}', 'Event:delete');
         });
 
         // Route group for /organizers pattern
@@ -66,6 +74,10 @@ return function (App $app) {
             $group->get('/{registration_id}', 'Registration:view');
             $group->get('/{registration_id}/event', 'Registration:viewEvent');
             $group->get('/{registration_id}/attendee', 'Registration:viewAttendee');
+            // Create, update, and delete registrations
+            $group->post('', 'Registration:create');
+            $group->put('/{registration_id}', 'Registration:update');
+            $group->delete('/{registration_id}', 'Registration:delete');
         });
 
         // Route group for /venues pattern
@@ -75,6 +87,10 @@ return function (App $app) {
             $group->get('', 'Venue:index');
             $group->get('/{venue_id}', 'Venue:view');
             $group->get('/{venue_id}/events', 'Venue:viewEvents');
+            // Create, update, and delete venue
+            $group->post('', 'Venue:create');
+            $group->put('/{venue_id}', 'Venue:update');
+            $group->delete('/{venue_id}', 'Venue:delete');
         });
     });
 };

@@ -1,6 +1,6 @@
 <?php
 /**
-* Author: TOPE_OLUSEGU
+* Author:
 * Date: 6/1/2026
 * File: index.php
 * Description:

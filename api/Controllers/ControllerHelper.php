@@ -1,9 +1,9 @@
 <?php
 /**
- * Author: TOPE_OLUSEGU
+ * Author:
  * Date: 6/2/2026
  * File: ControllerHelper.php
- * Description: Define the controllerHelper class
+ * Description: Define the controllerHelper class.
  */
 
 namespace EventHubAPI\Controllers;

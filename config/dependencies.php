@@ -1,6 +1,6 @@
 <?php
 /**
- * Author: TOPE_OLUSEGU
+ * Author:
  * Date: 6/2/2026
  * File: dependencies.php
  * Description: Define dependencies - instances of controller class. They are
