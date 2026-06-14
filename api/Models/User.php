@@ -127,7 +127,7 @@ class User extends Model {
 
         $key = self::JWT_KEY;
         $expiration = time() + self::JWT_EXPIRE;
-        $issuer = 'mycollege-api.com';
+        $issuer = 'EventHub-api.com';
 
         $payload = [
                 'iss' => $issuer,
