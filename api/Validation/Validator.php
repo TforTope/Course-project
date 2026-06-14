@@ -11,6 +11,7 @@ namespace EventHubAPI\Validation;
 use Respect\Validation\Validator as v;
 use Respect\Validation\Exceptions\NestedValidationException;
 
+
 class Validator {
     private static array $errors = [];
 
@@ -48,6 +49,19 @@ class Validator {
                 'email' => v::notEmpty()->email()->length(5, 100),
                 'phone' => v::notEmpty()->digit()->length(10, 20),
                 'date_of_birth' => v::notEmpty()->date('Y-m-d')
+        ];
+
+        return self::validate($request, $rules);
+    }
+
+    // Validate attributes of a User model. Do not validate fields having default values (id, created_at, and updated_at)
+    public static function validateUser($request) : bool {
+        $rules = [
+            'name' => v::alnum(' '),
+            'email' => v::email(),
+            'username' => v::notEmpty(),
+            'password' => v::notEmpty(),
+            'role' => v::number()->between(1, 4)
         ];
 
         return self::validate($request, $rules);

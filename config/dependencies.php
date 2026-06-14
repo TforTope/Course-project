@@ -14,6 +14,7 @@ use EventHubAPI\Controllers\EventController;
 use EventHubAPI\Controllers\OrganizerController;
 use EventHubAPI\Controllers\RegistrationController;
 use EventHubAPI\Controllers\VenueController;
+use EventHubAPI\Controllers\UserController;
 
 return function(Container $container) {
     // Set a dependency called "Attendee"
@@ -41,6 +42,10 @@ return function(Container $container) {
         return new VenueController();
     });
 
+    // Set a dependency called "User"
+    $container->set('User', function() {
+        return new UserController();
+    });
 };
 
 

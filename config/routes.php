@@ -10,6 +10,12 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\App;
 use Slim\Routing\RouteCollectorProxy;
+use EventHubAPI\Authentication\{MyAuthenticator,
+    BasicAuthenticator,
+    BearerAuthenticator,
+    JWTAuthenticator,
+    OAuth2Authenticator
+};
 
 return function (App $app) {
     // Add an app route
@@ -22,6 +28,20 @@ return function (App $app) {
     $app->get('/api/hello/{name}', function (Request $request, Response $response, array $args) {
         $response->getBody()->write("Hello " . $args['name']);
         return $response;
+    });
+
+    // User route group
+    $app->group('/api/v1/users', function (RouteCollectorProxy $group) {
+        $group->get('', 'User:index');
+        $group->get('/oauth2', 'User:oauth2');
+        $group->get('/{id}', 'User:view');
+        $group->post('', 'User:create');
+        $group->put('/{id}', 'User:update');
+        $group->delete('/{id}', 'User:delete');
+        //other routes
+        $group->post('/authBearer', 'User:authBearer');
+        // Route for JWT authentication
+        $group->post('/authJWT', 'User:authJWT');
     });
 
     // Route group api/v1 pattern
@@ -92,5 +112,11 @@ return function (App $app) {
             $group->put('/{venue_id}', 'Venue:update');
             $group->delete('/{venue_id}', 'Venue:delete');
         });
-    });
+        //}); //No auth
+        //})->add(new MyAuthenticator()); //MyAuthentication
+        //})->add(new BasicAuthenticator()); // BasicAuthentication
+        //})->add(new BearerAuthenticator()); // BearerAuthentication
+        //})->add(new JWTAuthenticator()); // JWTAuthentication
+    })->add(new OAuth2Authenticator()); // OAuth2Authentication
+
 };
