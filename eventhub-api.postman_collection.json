@@ -1,0 +1,1286 @@
+{
+  "info": {
+    "_postman_id": "ab54b1c7-82f1-46fe-9bc7-ec0b287cf3fb",
+    "name": "eventhub-api",
+    "description": "Postman collection for the EventHub RESTful API Lab 3. All endpoints use the {{base_url}} variable. Update the base_url variable in your Postman environment to match your own local project/server path. Example: [http://localhost/eventhub-api/public/api/v1](http://localhost/eventhub-api/public/api/v1)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "55149306",
+    "_collection_link": "https://go.postman.co/collection/55149306-ab54b1c7-82f1-46fe-9bc7-ec0b287cf3fb?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Attendees",
+      "item": [
+        {
+          "name": "GET All Attendees",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/attendees",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "attendees"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Attendee By ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/attendees/10",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "attendees",
+                "10"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Attendee Events",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/attendees/1/events",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "attendees",
+                "1",
+                "events"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Attendee Registrations",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/attendees/1/registrations",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "attendees",
+                "1",
+                "registrations"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Create Attendee",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Anson Avila\",\n  \"email\": \"anson@email.com\",\n  \"phone\": \"3171234567\",\n  \"date_of_birth\": \"2004-05-10\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/attendees",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "attendees"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Update Attendee",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"John Carter\",\n    \"email\": \"john@email.com\",\n    \"phone\": \"3177771167\",\n    \"date_of_birth\": \"1990-03-15\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/attendees/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "attendees",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Attendee",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/attendees/11",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "attendees",
+                "11"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Events",
+      "item": [
+        {
+          "name": "GET All Events",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/events",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "events"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Event By ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/events/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "events",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Event Organizer",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/events/1/organizer",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "events",
+                "1",
+                "organizer"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Event Venue",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/events/1/venue",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "events",
+                "1",
+                "venue"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Event Attendees",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/events/1/attendees",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "events",
+                "1",
+                "attendees"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Event Registrations",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/events/1/registrations",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "events",
+                "1",
+                "registrations"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Search Events",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/events?search=Tech",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "events"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "Tech"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Sort Events ASC",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/events?sort=event_date&order=asc",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "events"
+              ],
+              "query": [
+                {
+                  "key": "sort",
+                  "value": "event_date"
+                },
+                {
+                  "key": "order",
+                  "value": "asc"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Sort Events DESC",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/events?sort=event_date&order=desc",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "events"
+              ],
+              "query": [
+                {
+                  "key": "sort",
+                  "value": "event_date"
+                },
+                {
+                  "key": "order",
+                  "value": "desc"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Paginated Events",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/events?limit=3&offset=0",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "events"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "3"
+                },
+                {
+                  "key": "offset",
+                  "value": "0"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Create Event",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Fortnite Live Event\",\n  \"description\": \"Legendary Fortnite\",\n  \"event_date\": \"2026-12-01\",\n  \"organizer_id\": 1,\n  \"venue_id\": 2,\n  \"price\": 25.00,\n  \"max_capacity\": 300,\n  \"category\": \"Technology\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/events",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "events"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Update Event",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Updated AI Expo\",\n  \"price\": 50.00\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/events/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "events",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Event",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:passsword",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/events/12",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "events",
+                "12"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Organizers",
+      "item": [
+        {
+          "name": "GET All Organizers",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/organizers",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "organizers"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Organizer By ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/organizers/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "organizers",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Organizer Events",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/organizers/1/events",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "organizers",
+                "1",
+                "events"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Create Organizer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"New Organizer\",\n  \"email\": \"neworganizer@email.com\",\n  \"phone\": \"3178888888\",\n  \"organization_name\": \"Future Events\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/organizers",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "organizers"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Update Organizer",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"organization_name\": \"Updated Event Group\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/organizers/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "organizers",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Organizer",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/organizers/9",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "organizers",
+                "9"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Registrations",
+      "item": [
+        {
+          "name": "GET All Registrations",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/registrations",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "registrations"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Registration By ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/registrations/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "registrations",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Registration Event",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/registrations/1/event",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "registrations",
+                "1",
+                "event"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Registration Attendee",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/registrations/1/attendee",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "registrations",
+                "1",
+                "attendee"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Create Registration",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"event_id\": 1,\n  \"attendee_id\": 2,\n  \"registration_date\": \"2026-06-01\",\n  \"ticket_status\": \"Confirmed\",\n  \"payment_method\": \"Credit Card\",\n  \"amount_paid\": 150.00,\n  \"checked_in\": 0\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/registrations",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "registrations"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Update Registration",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ticket_status\": \"Cancelled\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/registrations/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "registrations",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Registration",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/registrations/26",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "registrations",
+                "26"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Venues",
+      "item": [
+        {
+          "name": "GET All Venues",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/venues",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "venues"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Venue By ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/venues/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "venues",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Venue Events",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/venues/1/events",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "venues",
+                "1",
+                "events"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Create Venue",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Future Arena\",\n  \"location\": \"Indianapolis\",\n  \"capacity\": 1000,\n  \"indoor\": 1,\n  \"contact_email\": \"futurearena@email.com\",\n  \"rental_fee\": 5000.00,\n  \"parking_available\": 1\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/venues",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "venues"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Update Venue",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"capacity\": 1500\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/venues/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "venues",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Venue",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/venues/9",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "venues",
+                "9"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Create User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Tolu Olusegun\",\r\n    \"email\": \"tolusegu@iu.edu\",\r\n    \"username\": \"Group 4\",\r\n    \"password\": \"password\",\r\n    \"role\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/users",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Users",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Tolu Olusegun\",\r\n    \"email\": \"tolusegu@iu.edu\",\r\n    \"username\": \"Group 4\",\r\n    \"password\": \"password\",\r\n    \"role\": 1\r\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/users",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get a User",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "EventHubAPI-Authorization",
+                "value": "Group4:password",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Tolu Olusegun\",\r\n    \"email\": \"tolusegu@iu.edu\",\r\n    \"username\": \"Group 4\",\r\n    \"password\": \"password\",\r\n    \"role\": 1\r\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/users/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update a User",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Tolu Olusegun\",\r\n    \"email\": \"tolusegu@iu.edu\",\r\n    \"username\": \"Group4\",\r\n    \"password\": \"password\",\r\n    \"role\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/users/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete a User",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Tolu Olusegun\",\r\n    \"email\": \"tolusegu@iu.edu\",\r\n    \"username\": \"Group4\",\r\n    \"password\": \"password\",\r\n    \"role\": 1\r\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/users/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get a Bearer token",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\":\"Group4\",\r\n    \"password\":\"password\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/users/authBearer",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users",
+                "authBearer"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get JWT token",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\":\"Group4\",\r\n    \"password\":\"password\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/users/authJWT",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users",
+                "authJWT"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "addTokenTo",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost/I425/Course-project/api/v1"
+    }
+  ]
+}
