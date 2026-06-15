@@ -1,0 +1,15 @@
+# Environment files
+.env
+
+# Secret files
+api/models/client_secret.json
+
+# Composer dependencies
+/vendor/
+
+# PhpStorm files
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
